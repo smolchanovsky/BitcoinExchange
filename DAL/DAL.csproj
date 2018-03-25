@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="DapperExtensions.DotnetCore" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DomainObjects\DomainObjects.csproj" />
+    <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj" />
+    <ProjectReference Include="..\Infrastructure.DAL\Infrastructure.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="LocalRepositories\" />
+  </ItemGroup>
+
+</Project>
