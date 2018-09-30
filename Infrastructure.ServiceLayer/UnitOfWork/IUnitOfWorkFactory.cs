@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.BLL.UnitOfWork
+﻿namespace Infrastructure.ServiceLayer.UnitOfWork
 {
     public interface IUnitOfWorkFactory
     {

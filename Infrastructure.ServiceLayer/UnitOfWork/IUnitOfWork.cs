@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 
-namespace Infrastructure.BLL.UnitOfWork
+namespace Infrastructure.ServiceLayer.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {

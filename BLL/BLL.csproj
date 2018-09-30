@@ -16,7 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj" />
     <ProjectReference Include="..\DomainObjects\DomainObjects.csproj" />
-    <ProjectReference Include="..\Infrastructure.BLL\Infrastructure.BLL.csproj" />
+    <ProjectReference Include="..\Infrastructure.ServiceLayer\Infrastructure.ServiceLayer.csproj" />
   </ItemGroup>
 
 </Project>

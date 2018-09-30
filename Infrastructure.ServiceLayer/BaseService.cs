@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using Infrastructure.BLL.UnitOfWork;
 using Infrastructure.Common;
 using Infrastructure.DAL;
+using Infrastructure.ServiceLayer.UnitOfWork;
 
-namespace Infrastructure.BLL
+namespace Infrastructure.ServiceLayer
 {
     /// <summary>
     /// The base service that implements a common functional.

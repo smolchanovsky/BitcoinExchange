@@ -9,7 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj" />
+    <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj">
+      <Private>true</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure.DAL\Infrastructure.DAL.csproj" />
   </ItemGroup>
 

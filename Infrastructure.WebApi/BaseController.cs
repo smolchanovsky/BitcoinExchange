@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using Infrastructure.BLL;
 using Infrastructure.Common;
+using Infrastructure.ServiceLayer;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Infrastructure.WebApi
 {
-    public class BaseController<T> : Controller where T: IEntity
+	public class BaseController<T> : Controller where T: IEntity
     {
         private readonly IBaseService<T> _baseService;
 

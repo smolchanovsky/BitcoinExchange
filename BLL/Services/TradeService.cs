@@ -5,9 +5,9 @@ using BLL.DataTransferObjects;
 using DAL.RemoteRepositories;
 using DomainObjects;
 using DomainObjects.Enums;
-using Infrastructure.BLL;
-using Infrastructure.BLL.UnitOfWork;
 using Infrastructure.DAL;
+using Infrastructure.ServiceLayer;
+using Infrastructure.ServiceLayer.UnitOfWork;
 
 namespace BLL.Services
 {

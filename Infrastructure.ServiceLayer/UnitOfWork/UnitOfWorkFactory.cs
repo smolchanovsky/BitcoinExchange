@@ -1,6 +1,6 @@
 ﻿using Infrastructure.DAL.Connection;
 
-namespace Infrastructure.BLL.UnitOfWork
+namespace Infrastructure.ServiceLayer.UnitOfWork
 {
     /// <summary>
     /// Creates a new unit of work.
