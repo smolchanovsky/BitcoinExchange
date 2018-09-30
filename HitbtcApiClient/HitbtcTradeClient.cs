@@ -1,40 +1,40 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using BitcoinExchange.Models;
 using BitcoinExchange.Models.Enums;
-using Infrastructure.Common.WebService;
+using HitbtcApiClient.Dto;
+using Infrastructure.WebApi.ApiClient;
 
-namespace BitcoinExchange.DataLayer.RemoteRepositories
+namespace HitbtcApiClient
 {
-    public class HitbtcTradeRepository : IHitbtcTradeRepository
+    public class HitbtcTradeClient : IHitbtcTradeClient
     {
         private readonly ApiClient _apiClient;
 
-        public HitbtcTradeRepository(ApiClient apiClient)
+        public HitbtcTradeClient(ApiClient apiClient)
         {
             _apiClient = apiClient;
 			//TODO: Implement config class for ApiClient
 			_apiClient.ApiUrl = "https://api.hitbtc.com";
             _apiClient.ApiVersion = "api/2/public/";
-            _apiClient.EntityName = typeof(Trade)
+            _apiClient.EntityName = typeof(TradeDto)
                 .GetCustomAttributes(true)
                 .OfType<ApiEntityAttribute>()
                 .FirstOrDefault()?
                 .ApiEntityName;
         }
 
-        public IList<Trade> GetLastTrades(MarketType marketType)
+        public IList<TradeDto> GetLastTrades(MarketType marketType)
         {
-            return _apiClient.MakeRequest<IList<Trade>>(
+            return _apiClient.MakeRequest<IList<TradeDto>>(
 		        HttpMethod.Get,
 		        marketType.ToString(),
 		        new UrlParams { (Name: "sort", Value: "DESC") }); ;
         }
 
-        public Trade GetById(MarketType marketType, long id)
+        public TradeDto GetById(MarketType marketType, long id)
         {
-            return _apiClient.MakeRequest<Trade>(
+            return _apiClient.MakeRequest<TradeDto>(
 		        HttpMethod.Get,
 		        marketType.ToString(),
 		        new UrlParams { (Name: "by", Value: id) }); ;

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using BitcoinExchange.DataLayer.RemoteRepositories;
 using BitcoinExchange.Models;
 using BitcoinExchange.Models.Enums;
 using BitcoinExchange.ServiceLayer.DataTransferObjects;
+using HitbtcApiClient;
 using Infrastructure.DataLayer;
 using Infrastructure.ServiceLayer;
 using Infrastructure.ServiceLayer.UnitOfWork;
@@ -17,20 +17,20 @@ namespace BitcoinExchange.ServiceLayer.Services
     public class TradeService : BaseService<TradeDto, Trade>
     {
         private readonly IBaseRepository<Trade> _tradeRepository;
-        private readonly IHitbtcTradeRepository _hitbtcTradeRepository;
+        private readonly IHitbtcTradeClient _hitbtcTradeClient;
 
-        public TradeService(IUnitOfWorkFactory unitOfWorkFactory, IBaseRepository<Trade> tradeRepository, IHitbtcTradeRepository hitbtcTradeRepository)
+        public TradeService(IUnitOfWorkFactory unitOfWorkFactory, IBaseRepository<Trade> tradeRepository, IHitbtcTradeClient hitbtcTradeClient)
             : base(unitOfWorkFactory, tradeRepository)
         {
             _tradeRepository = tradeRepository;
-            _hitbtcTradeRepository = hitbtcTradeRepository;
+            _hitbtcTradeClient = hitbtcTradeClient;
         }
 
         public IList<TradeDto> LoadLastTrades()
         {
             using (var unitOfWork = UnitOfWorkFactory.Create())
             {
-                var hhitbtcTrades = _hitbtcTradeRepository.GetLastTrades(MarketType.ETHBTC);
+                var hhitbtcTrades = _hitbtcTradeClient.GetLastTrades(MarketType.ETHBTC).Select(Mapper.Map<Trade>);
                 _tradeRepository.BulkInsert(hhitbtcTrades);
                 return hhitbtcTrades
                     .Select(Mapper.Map<TradeDto>)

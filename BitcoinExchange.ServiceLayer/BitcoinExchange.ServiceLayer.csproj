@@ -12,7 +12,9 @@
   <ItemGroup>
     <ProjectReference Include="..\BitcoinExchange.DataLayer\BitcoinExchange.DataLayer.csproj" />
     <ProjectReference Include="..\BitcoinExchange.Models\BitcoinExchange.Models.csproj" />
+    <ProjectReference Include="..\HitbtcApiClient\HitbtcApiClient.csproj" />
     <ProjectReference Include="..\Infrastructure.ServiceLayer\Infrastructure.ServiceLayer.csproj" />
+    <ProjectReference Include="..\Infrastructure.WebApi\Infrastructure.WebApi.csproj" />
   </ItemGroup>
 
 </Project>

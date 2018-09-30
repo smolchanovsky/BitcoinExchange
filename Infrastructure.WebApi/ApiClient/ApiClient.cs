@@ -6,7 +6,7 @@ using System.Text;
 using Infrastructure.Common.Utils;
 using Newtonsoft.Json;
 
-namespace Infrastructure.Common.WebService
+namespace Infrastructure.WebApi.ApiClient
 {
     /// <summary>
     /// Sends requests to web services.

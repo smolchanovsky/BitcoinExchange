@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Infrastructure.Common.WebService
+namespace Infrastructure.WebApi.ApiClient
 {
     /// <summary>
     /// Contains query string of URL.

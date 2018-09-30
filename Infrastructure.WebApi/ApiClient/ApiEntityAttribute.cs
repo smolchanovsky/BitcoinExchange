@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure.Common.WebService
+namespace Infrastructure.WebApi.ApiClient
 {
     /// <summary>
     /// Specifies the name of the web service entity.

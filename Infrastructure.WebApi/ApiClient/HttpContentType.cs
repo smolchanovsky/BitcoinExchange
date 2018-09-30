@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Infrastructure.Common.WebService
+namespace Infrastructure.WebApi.ApiClient
 {
     public class HttpContentType : IEquatable<HttpContentType>
     {

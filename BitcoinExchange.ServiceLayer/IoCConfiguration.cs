@@ -1,10 +1,10 @@
 ﻿using BitcoinExchange.DataLayer;
-using BitcoinExchange.DataLayer.RemoteRepositories;
 using BitcoinExchange.ServiceLayer.Services;
-using Infrastructure.Common.WebService;
+using HitbtcApiClient;
 using Infrastructure.DataLayer;
 using Infrastructure.DataLayer.Connection;
 using Infrastructure.ServiceLayer.UnitOfWork;
+using Infrastructure.WebApi.ApiClient;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BitcoinExchange.ServiceLayer
@@ -14,7 +14,7 @@ namespace BitcoinExchange.ServiceLayer
         public static void Configure(IServiceCollection services)
         {
             services.AddScoped<ApiClient>();
-            services.AddScoped<IHitbtcTradeRepository, HitbtcTradeRepository>();
+            services.AddScoped<IHitbtcTradeClient, HitbtcTradeClient>();
             services.AddScoped<IConnectionFactory, SqlServerConnectionFactory>();
             services.AddScoped<IUnitOfWorkFactory, UnitOfWorkFactory>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
