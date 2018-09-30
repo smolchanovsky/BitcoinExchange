@@ -7,7 +7,7 @@ using Infrastructure.ServiceLayer.UnitOfWork;
 using Infrastructure.WebApi.ApiClient;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BitcoinExchange.ServiceLayer
+namespace BitcoinExchange.WebService
 {
 	public static class IoCConfiguration
     {
