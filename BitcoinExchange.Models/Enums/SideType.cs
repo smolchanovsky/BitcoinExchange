@@ -1,4 +1,4 @@
-﻿namespace DomainObjects.Enums
+﻿namespace BitcoinExchange.Models.Enums
 {
     /// <summary>
     /// Trade side sell or buy.

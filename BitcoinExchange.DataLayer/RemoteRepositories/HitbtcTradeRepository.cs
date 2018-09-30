@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using DomainObjects;
-using DomainObjects.Enums;
+using BitcoinExchange.Models;
+using BitcoinExchange.Models.Enums;
 using Infrastructure.Common.WebService;
 
 namespace BitcoinExchange.DataLayer.RemoteRepositories

@@ -2,9 +2,9 @@
 using System.Linq;
 using AutoMapper;
 using BitcoinExchange.DataLayer.RemoteRepositories;
+using BitcoinExchange.Models;
+using BitcoinExchange.Models.Enums;
 using BitcoinExchange.ServiceLayer.DataTransferObjects;
-using DomainObjects;
-using DomainObjects.Enums;
 using Infrastructure.DataLayer;
 using Infrastructure.ServiceLayer;
 using Infrastructure.ServiceLayer.UnitOfWork;

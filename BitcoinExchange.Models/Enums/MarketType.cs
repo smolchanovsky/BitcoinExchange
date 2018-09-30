@@ -1,4 +1,4 @@
-﻿namespace DomainObjects.Enums
+﻿namespace BitcoinExchange.Models.Enums
 {
     /// <summary>
     /// Types of markets. <a href="https://hitbtc.com">See here.</a>

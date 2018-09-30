@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using DomainObjects;
-using DomainObjects.Enums;
+using BitcoinExchange.Models;
+using BitcoinExchange.Models.Enums;
 
 namespace BitcoinExchange.DataLayer.RemoteRepositories
 {

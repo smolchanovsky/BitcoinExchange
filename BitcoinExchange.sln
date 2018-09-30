@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainObjects", "DomainObjects\DomainObjects.csproj", "{311864BF-0C6B-49D7-91AB-3D1D428948D5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebService", "WebService\WebService.csproj", "{CE15A027-5801-4D93-BC52-81E29796DCD4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1420B9C3-CBE6-473B-9887-3696F2B80ECF}"
@@ -17,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.ServiceLayer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinExchange.ServiceLayer", "BitcoinExchange.ServiceLayer\BitcoinExchange.ServiceLayer.csproj", "{D95CF65D-A395-405A-BF9E-E06A6012B90F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.DataLayer", "Infrastructure.DataLayer\Infrastructure.DataLayer.csproj", "{6078B447-AF8F-48F6-833F-B83E5167ED54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.DataLayer", "Infrastructure.DataLayer\Infrastructure.DataLayer.csproj", "{6078B447-AF8F-48F6-833F-B83E5167ED54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinExchange.DataLayer", "BitcoinExchange.DataLayer\BitcoinExchange.DataLayer.csproj", "{3384AA4C-BA58-4CA3-9EAF-C75D82247FF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinExchange.DataLayer", "BitcoinExchange.DataLayer\BitcoinExchange.DataLayer.csproj", "{3384AA4C-BA58-4CA3-9EAF-C75D82247FF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinExchange.Models", "BitcoinExchange.Models\BitcoinExchange.Models.csproj", "{5C935432-D506-4F15-BE34-916D8F8EAC0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{311864BF-0C6B-49D7-91AB-3D1D428948D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{311864BF-0C6B-49D7-91AB-3D1D428948D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{311864BF-0C6B-49D7-91AB-3D1D428948D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{311864BF-0C6B-49D7-91AB-3D1D428948D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CE15A027-5801-4D93-BC52-81E29796DCD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE15A027-5801-4D93-BC52-81E29796DCD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE15A027-5801-4D93-BC52-81E29796DCD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +55,10 @@ Global
 		{3384AA4C-BA58-4CA3-9EAF-C75D82247FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3384AA4C-BA58-4CA3-9EAF-C75D82247FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3384AA4C-BA58-4CA3-9EAF-C75D82247FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C935432-D506-4F15-BE34-916D8F8EAC0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C935432-D506-4F15-BE34-916D8F8EAC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C935432-D506-4F15-BE34-916D8F8EAC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C935432-D506-4F15-BE34-916D8F8EAC0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

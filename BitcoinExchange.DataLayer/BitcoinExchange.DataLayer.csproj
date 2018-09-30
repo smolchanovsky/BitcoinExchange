@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainObjects\DomainObjects.csproj" />
+    <ProjectReference Include="..\BitcoinExchange.Models\BitcoinExchange.Models.csproj" />
     <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj" />
     <ProjectReference Include="..\Infrastructure.DataLayer\Infrastructure.DataLayer.csproj" />
   </ItemGroup>

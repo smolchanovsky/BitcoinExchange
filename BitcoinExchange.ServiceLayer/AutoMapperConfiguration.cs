@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using BitcoinExchange.Models;
 using BitcoinExchange.ServiceLayer.DataTransferObjects;
-using DomainObjects;
 
 namespace BitcoinExchange.ServiceLayer
 {

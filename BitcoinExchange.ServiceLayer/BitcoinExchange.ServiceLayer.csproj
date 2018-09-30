@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BitcoinExchange.DataLayer\BitcoinExchange.DataLayer.csproj" />
-    <ProjectReference Include="..\DomainObjects\DomainObjects.csproj" />
+    <ProjectReference Include="..\BitcoinExchange.Models\BitcoinExchange.Models.csproj" />
     <ProjectReference Include="..\Infrastructure.ServiceLayer\Infrastructure.ServiceLayer.csproj" />
   </ItemGroup>
 

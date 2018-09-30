@@ -1,5 +1,5 @@
 ﻿using System;
-using DomainObjects.Enums;
+using BitcoinExchange.Models.Enums;
 using Infrastructure.Common;
 
 namespace BitcoinExchange.ServiceLayer.DataTransferObjects

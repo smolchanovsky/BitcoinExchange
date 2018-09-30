@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using DomainObjects.Enums;
+using BitcoinExchange.Models.Enums;
 using Infrastructure.Common;
 using Infrastructure.Common.WebService;
 
-namespace DomainObjects
+namespace BitcoinExchange.Models
 {
     /// <summary>
     /// Trade details. <a href="https://api.hitbtc.com/#trades">See here.</a>
