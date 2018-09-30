@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace WebService
+namespace BitcoinExchange.WebService
 {
     public class Program
     {

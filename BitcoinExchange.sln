@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebService", "WebService\WebService.csproj", "{CE15A027-5801-4D93-BC52-81E29796DCD4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1420B9C3-CBE6-473B-9887-3696F2B80ECF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Common", "Infrastructure.Common\Infrastructure.Common.csproj", "{FC635A23-4976-4463-B20E-7E64B8EDF597}"
@@ -21,16 +19,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinExchange.DataLayer",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitcoinExchange.Models", "BitcoinExchange.Models\BitcoinExchange.Models.csproj", "{5C935432-D506-4F15-BE34-916D8F8EAC0D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitcoinExchange.WebService", "BitcoinExchange.WebService\BitcoinExchange.WebService.csproj", "{2C38C1B6-F245-410C-988D-52367E397837}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CE15A027-5801-4D93-BC52-81E29796DCD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE15A027-5801-4D93-BC52-81E29796DCD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE15A027-5801-4D93-BC52-81E29796DCD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE15A027-5801-4D93-BC52-81E29796DCD4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC635A23-4976-4463-B20E-7E64B8EDF597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC635A23-4976-4463-B20E-7E64B8EDF597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC635A23-4976-4463-B20E-7E64B8EDF597}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +55,10 @@ Global
 		{5C935432-D506-4F15-BE34-916D8F8EAC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C935432-D506-4F15-BE34-916D8F8EAC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C935432-D506-4F15-BE34-916D8F8EAC0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C38C1B6-F245-410C-988D-52367E397837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C38C1B6-F245-410C-988D-52367E397837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C38C1B6-F245-410C-988D-52367E397837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C38C1B6-F245-410C-988D-52367E397837}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,7 @@ using BitcoinExchange.ServiceLayer.Services;
 using Infrastructure.WebApi;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebService.Controllers
+namespace BitcoinExchange.WebService.Controllers
 {
     [Route("api/[controller]")]
     public class TradesController : BaseController<TradeDto>
