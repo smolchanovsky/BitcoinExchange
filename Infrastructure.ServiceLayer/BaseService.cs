@@ -17,12 +17,14 @@ namespace Infrastructure.ServiceLayer
         where TDto : IEntity
     {
         protected readonly IUnitOfWorkFactory UnitOfWorkFactory;
-        private readonly IBaseRepository<TDomain> _baseRepository;
+	    protected readonly IMapper ModelMapper;
+		private readonly IBaseRepository<TDomain> _baseRepository;
 
-        public BaseService(IUnitOfWorkFactory unitOfWorkFactory, IBaseRepository<TDomain> baseRepository)
+	    public BaseService(IUnitOfWorkFactory unitOfWorkFactory, IBaseRepository<TDomain> baseRepository, IMapper modelMapper)
         {
             UnitOfWorkFactory = unitOfWorkFactory;
             _baseRepository = baseRepository;
+	        ModelMapper = modelMapper;
         }
 
         public virtual IList<TDto> GetAll()
@@ -30,7 +32,7 @@ namespace Infrastructure.ServiceLayer
             using (var unitOfWork = UnitOfWorkFactory.Create())
             {
                 return _baseRepository.GetAll()
-                    .Select(x => Mapper.Map<TDto>(x))
+                    .Select(x => ModelMapper.Map<TDto>(x))
                     .ToList();
             }
         }
@@ -39,7 +41,7 @@ namespace Infrastructure.ServiceLayer
         {
             using (var unitOfWork = UnitOfWorkFactory.Create())
             {
-                return Mapper.Map<TDto>(_baseRepository.GetById(id));
+                return ModelMapper.Map<TDto>(_baseRepository.GetById(id));
             }
         }
 
@@ -47,9 +49,9 @@ namespace Infrastructure.ServiceLayer
         {
             using (var unitOfWork = UnitOfWorkFactory.Create())
             {
-                var domain = Mapper.Map<TDomain>(dto);
+                var domain = ModelMapper.Map<TDomain>(dto);
                 domain.Id = _baseRepository.Insert(domain);
-                return Mapper.Map<TDto>(domain);
+                return ModelMapper.Map<TDto>(domain);
             }
         }
 
@@ -57,7 +59,7 @@ namespace Infrastructure.ServiceLayer
         {
             using (var unitOfWork = UnitOfWorkFactory.Create())
             {
-                return _baseRepository.Update(Mapper.Map<TDomain>(dto));
+                return _baseRepository.Update(ModelMapper.Map<TDomain>(dto));
             }
         }
 

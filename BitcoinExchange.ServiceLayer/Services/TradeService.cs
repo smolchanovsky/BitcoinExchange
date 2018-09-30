@@ -19,8 +19,8 @@ namespace BitcoinExchange.ServiceLayer.Services
         private readonly IBaseRepository<Trade> _tradeRepository;
         private readonly IHitbtcTradeClient _hitbtcTradeClient;
 
-        public TradeService(IUnitOfWorkFactory unitOfWorkFactory, IBaseRepository<Trade> tradeRepository, IHitbtcTradeClient hitbtcTradeClient)
-            : base(unitOfWorkFactory, tradeRepository)
+        public TradeService(IUnitOfWorkFactory unitOfWorkFactory, IBaseRepository<Trade> tradeRepository, IHitbtcTradeClient hitbtcTradeClient, IMapper modelMapper)
+            : base(unitOfWorkFactory, tradeRepository, modelMapper)
         {
             _tradeRepository = tradeRepository;
             _hitbtcTradeClient = hitbtcTradeClient;
@@ -30,10 +30,10 @@ namespace BitcoinExchange.ServiceLayer.Services
         {
             using (var unitOfWork = UnitOfWorkFactory.Create())
             {
-                var hhitbtcTrades = _hitbtcTradeClient.GetLastTrades(MarketType.ETHBTC).Select(Mapper.Map<Trade>);
+                var hhitbtcTrades = _hitbtcTradeClient.GetLastTrades(MarketType.ETHBTC).Select(ModelMapper.Map<Trade>);
                 _tradeRepository.BulkInsert(hhitbtcTrades);
                 return hhitbtcTrades
-                    .Select(Mapper.Map<TradeDto>)
+                    .Select(ModelMapper.Map<TradeDto>)
                     .ToList();
             }
         }
