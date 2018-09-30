@@ -9,39 +9,27 @@ namespace Infrastructure.WebApi
     {
         private readonly IBaseService<T> _baseService;
 
-        public BaseController(IBaseService<T> baseService)
-        {
-            _baseService = baseService;
-        }
+        public BaseController(IBaseService<T> baseService) => 
+	        _baseService = baseService;
 
-        [HttpGet]
-        public IList<T> GetAll(int id)
-        {
-            return _baseService.GetAll();
-        }
+	    [HttpGet]
+        public IList<T> GetAll(int id) => 
+		    _baseService.GetAll();
 
-        [HttpGet("{id}")]
-        public T Get(long id)
-        {
-            return _baseService.GetById(id);
-        }
+		[HttpGet("{id}")]
+		public T Get(long id) => 
+			_baseService.GetById(id);
 
-        [HttpPost]
-        public void Post([FromBody]T value)
-        {
-            _baseService.Insert(value);
-        }
+		[HttpPost]
+		public void Post([FromBody]T value) => 
+			_baseService.Insert(value);
 
-        [HttpPut("{id}")]
-        public void Put(long id, [FromBody]T value)
-        {
-            _baseService.Update(value);
-        }
+		[HttpPut("{id}")]
+		public void Put(long id, [FromBody]T value) => 
+			_baseService.Update(value);
 
-        [HttpDelete("{id}")]
-        public void Delete(long id)
-        {
-            _baseService.Delete(id);
-        }
-    }
+		[HttpDelete("{id}")]
+		public void Delete(long id) => 
+			_baseService.Delete(id);
+	}
 }

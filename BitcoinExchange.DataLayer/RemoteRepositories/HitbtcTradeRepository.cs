@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using BitcoinExchange.Models;
@@ -15,7 +14,8 @@ namespace BitcoinExchange.DataLayer.RemoteRepositories
         public HitbtcTradeRepository(ApiClient apiClient)
         {
             _apiClient = apiClient;
-            _apiClient.ApiUrl = "https://api.hitbtc.com";
+			//TODO: Implement config class for ApiClient
+			_apiClient.ApiUrl = "https://api.hitbtc.com";
             _apiClient.ApiVersion = "api/2/public/";
             _apiClient.EntityName = typeof(Trade)
                 .GetCustomAttributes(true)
@@ -26,30 +26,18 @@ namespace BitcoinExchange.DataLayer.RemoteRepositories
 
         public IList<Trade> GetLastTrades(MarketType marketType)
         {
-            var result = _apiClient.MakeRequest<IList<Trade>>(
-                HttpMethod.Get,
-                marketType.ToString(),
-                new UrlParams { ( Name: "sort", Value: "DESC" ) },
-                out var error);
-
-            if (error != null)
-                throw new InvalidOperationException(error.message);
-
-            return result;
+            return _apiClient.MakeRequest<IList<Trade>>(
+		        HttpMethod.Get,
+		        marketType.ToString(),
+		        new UrlParams { (Name: "sort", Value: "DESC") }); ;
         }
 
         public Trade GetById(MarketType marketType, long id)
         {
-            var result = _apiClient.MakeRequest<Trade>(
-                HttpMethod.Get,
-                marketType.ToString(),
-                new UrlParams { ( Name: "by", Value: id ) },
-                out var error);
-
-            if (error != null)
-                throw new InvalidOperationException(error.message);
-
-            return result;
+            return _apiClient.MakeRequest<Trade>(
+		        HttpMethod.Get,
+		        marketType.ToString(),
+		        new UrlParams { (Name: "by", Value: id) }); ;
         }
     }
 }

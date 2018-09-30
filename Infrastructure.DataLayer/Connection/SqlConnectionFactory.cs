@@ -4,13 +4,13 @@ using System.Data.SqlClient;
 namespace Infrastructure.DataLayer.Connection
 {
     /// <summary>
-    /// Base class for SQL connection factory.
+    /// SQL connection factory.
     /// </summary>
-    public abstract class SqlConnectionFactory : ConnectionFactory
+    public class SqlConnectionFactory : ConnectionFactory
     {
         protected string ConnectionString;
 
-        protected SqlConnectionFactory(string connectionString)
+        public SqlConnectionFactory(string connectionString)
         {
             ConnectionString = connectionString;
         }

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using DapperExtensions;
 using Infrastructure.Common;
@@ -14,7 +14,6 @@ namespace Infrastructure.DataLayer
     public class BaseRepository<TDomain> : IBaseRepository<TDomain> where TDomain : class, IEntity
     {
         private readonly IConnectionFactory _connectionFactory;
-        private IDbConnection Connection => _connectionFactory.GetConnection();
 
         public BaseRepository(IConnectionFactory connectionFactory)
         {
@@ -23,32 +22,35 @@ namespace Infrastructure.DataLayer
 
         public virtual IList<TDomain> GetAll()
         {
-            return (Connection as SqlConnection).GetList<TDomain>().ToList();
+            return GetConnection().GetList<TDomain>().ToList();
         }
 
         public virtual TDomain GetById(long id)
         {
-            return (Connection as SqlConnection).Get<TDomain>(id);
+            return GetConnection().Get<TDomain>(id);
         }
 
         public virtual long Insert(TDomain domain)
         {
-            return (Connection as SqlConnection).Insert(domain);
+            return GetConnection().Insert(domain);
         }
 
         public virtual void BulkInsert(IEnumerable<TDomain> domains)
         {
-            (Connection as SqlConnection).Insert(domains);
+            GetConnection().Insert(domains);
         }
 
         public virtual bool Update(TDomain domain)
         {
-            return (Connection as SqlConnection).Update(domain);
+            return GetConnection().Update(domain);
         }
 
         public virtual bool Delete(long id)
         {
-            return (Connection as SqlConnection).Delete<TDomain>(id);
+            return GetConnection().Delete<TDomain>(id);
         }
-    }
+
+	    private DbConnection GetConnection() => 
+		    _connectionFactory.GetConnection() as DbConnection ?? throw new InvalidOperationException();
+	}
 }

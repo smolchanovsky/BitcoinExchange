@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using Infrastructure.Common.Utils;
 using Newtonsoft.Json;
 
 namespace Infrastructure.Common.WebService
@@ -25,41 +26,31 @@ namespace Infrastructure.Common.WebService
         }
         
         #region MakeRequest
-        public TResponse MakeRequest<TResponse>(HttpMethod method, out dynamic error)
-        {
-            return BaseMakeRequest<object, TResponse>(method, out error, action: null, id: null, parameters: null, dto: default);
-        }
+        public TResponse MakeRequest<TResponse>(HttpMethod method) => 
+	        BaseMakeRequest<object, TResponse>(method);
 
-        public TResponse MakeRequest<TDto, TResponse>(HttpMethod method, TDto dto, out dynamic error)
-        {
-            return BaseMakeRequest<TDto, TResponse>(method, out error, action: null, id: null, parameters: null, dto: dto);
-        }
+	    public TResponse MakeRequest<TDto, TResponse>(HttpMethod method, TDto dto) => 
+		    BaseMakeRequest<TDto, TResponse>(method, action: null, id: null, parameters: null, dto: dto);
 
-        public TResponse MakeRequest<TDto, TResponse>(HttpMethod method, long id, TDto dto, out dynamic error)
-        {
-            return BaseMakeRequest<TDto, TResponse>(method, out error, action: null, id: id, parameters: null, dto: dto);
-        }
+	    public TResponse MakeRequest<TDto, TResponse>(HttpMethod method, long id, TDto dto) => 
+		    BaseMakeRequest<TDto, TResponse>(method, action: null, id: id, parameters: null, dto: dto);
 
-        public TResponse MakeRequest<TResponse>(HttpMethod method, string action, UrlParams parameters, out dynamic error)
-        {
-            return BaseMakeRequest<object, TResponse>(method, out error, action, id: null, parameters: parameters, dto: default);
-        }
-        #endregion
+	    public TResponse MakeRequest<TResponse>(HttpMethod method, string action, UrlParams parameters) => 
+		    BaseMakeRequest<object, TResponse>(method, action, id: null, parameters: parameters);
+	    #endregion
 
-        private TResponse BaseMakeRequest<TDto, TResponse>(HttpMethod method, out dynamic error, string action = null, long? id = null, UrlParams parameters = null, TDto dto = default)
+        private TResponse BaseMakeRequest<TDto, TResponse>(HttpMethod method, string action = null, long? id = null, UrlParams parameters = null, TDto dto = default)
         {
             var requestUri = GetUri(id, action, parameters);
             var responseBytes = SendRequest(requestUri, method, dto);
             try
             {
-                error = null;
                 return DeserializeResponse<TResponse>(responseBytes);
             }
-            // If Bad Request returns JSON with the error message
             catch (WebException ex) when (ex.Status == WebExceptionStatus.ProtocolError)
             {
-                error = DeserializeResponse<dynamic>(responseBytes);
-                return default;
+	            // If Bad Request returns JSON with the error message
+				throw new InvalidOperationException(DeserializeResponse<dynamic>(responseBytes), ex);
             }
         }
 
@@ -82,7 +73,7 @@ namespace Infrastructure.Common.WebService
             {
                 using (var dataStream = response.GetResponseStream())
                 {
-                    return ReadFully(dataStream);
+                    return dataStream.ReadFully();
                 }
             }
         }
@@ -91,9 +82,12 @@ namespace Infrastructure.Common.WebService
         {
             var uriBuilder = new UriBuilder(ApiUrl)
             {
-                Path = Path.Combine(ApiVersion ?? "", EntityName ?? "", action ?? "", id?.ToString() ?? ""),
-                Query = parameters?.ToString() ?? String.Empty,
-
+                Path = Path.Combine(
+	                ApiVersion ?? string.Empty, 
+	                EntityName ?? string.Empty, 
+	                action ?? string.Empty, 
+	                id?.ToString() ?? string.Empty),
+                Query = parameters?.ToString() ?? string.Empty,
             };
             return uriBuilder.Uri;
         }
@@ -102,7 +96,7 @@ namespace Infrastructure.Common.WebService
         {
             switch (ContentType)
             {
-                case HttpContentType type when (type == HttpContentType.Json):
+                case HttpContentType type when type == HttpContentType.Json:
                     return Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(dto));
                 default:
                     throw new Exception("Content-Type not supported.");
@@ -116,20 +110,11 @@ namespace Infrastructure.Common.WebService
 
             switch (ContentType)
             {
-                case HttpContentType type when (type == HttpContentType.Json):
+                case HttpContentType type when type == HttpContentType.Json:
                     var responseText = Encoding.UTF8.GetString(bytes);
                     return JsonConvert.DeserializeObject<TResponse>(responseText);
                 default:
                     throw new Exception("Content-Type not supported.");
-            }
-        }
-
-        public static byte[] ReadFully(Stream input)
-        {
-            using (var ms = new MemoryStream())
-            {
-                input.CopyTo(ms);
-                return ms.ToArray();
             }
         }
     }
