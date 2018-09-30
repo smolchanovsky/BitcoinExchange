@@ -1,4 +1,4 @@
-﻿using BLL.Services;
+﻿using BitcoinExchange.ServiceLayer.Services;
 using DAL;
 using DAL.RemoteRepositories;
 using Infrastructure.Common.WebService;
@@ -7,7 +7,7 @@ using Infrastructure.DAL.Connection;
 using Infrastructure.ServiceLayer.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BLL
+namespace BitcoinExchange.ServiceLayer
 {
 	public static class IoCConfiguration
     {

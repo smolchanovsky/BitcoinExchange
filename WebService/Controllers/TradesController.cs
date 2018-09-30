@@ -1,5 +1,5 @@
-﻿using BLL.DataTransferObjects;
-using BLL.Services;
+﻿using BitcoinExchange.ServiceLayer.DataTransferObjects;
+using BitcoinExchange.ServiceLayer.Services;
 using Infrastructure.WebApi;
 using Microsoft.AspNetCore.Mvc;
 

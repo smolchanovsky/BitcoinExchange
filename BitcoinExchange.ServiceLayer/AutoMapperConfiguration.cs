@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using BLL.DataTransferObjects;
+using BitcoinExchange.ServiceLayer.DataTransferObjects;
 using DomainObjects;
 
-namespace BLL
+namespace BitcoinExchange.ServiceLayer
 {
     public static class AutoMapperConfiguration
     {

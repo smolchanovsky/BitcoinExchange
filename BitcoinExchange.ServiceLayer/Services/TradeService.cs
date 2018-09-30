@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using BLL.DataTransferObjects;
+using BitcoinExchange.ServiceLayer.DataTransferObjects;
 using DAL.RemoteRepositories;
 using DomainObjects;
 using DomainObjects.Enums;
@@ -9,7 +9,7 @@ using Infrastructure.DAL;
 using Infrastructure.ServiceLayer;
 using Infrastructure.ServiceLayer.UnitOfWork;
 
-namespace BLL.Services
+namespace BitcoinExchange.ServiceLayer.Services
 {
     /// <summary>
     /// Implements all the business logic related to trades.
