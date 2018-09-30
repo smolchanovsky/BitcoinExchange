@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\BitcoinExchange.DataLayer\BitcoinExchange.DataLayer.csproj" />
     <ProjectReference Include="..\DomainObjects\DomainObjects.csproj" />
     <ProjectReference Include="..\Infrastructure.ServiceLayer\Infrastructure.ServiceLayer.csproj" />
   </ItemGroup>

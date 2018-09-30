@@ -2,7 +2,7 @@
 using DomainObjects;
 using DomainObjects.Enums;
 
-namespace DAL.RemoteRepositories
+namespace BitcoinExchange.DataLayer.RemoteRepositories
 {
     public interface IHitbtcTradeRepository
     {

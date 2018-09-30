@@ -1,6 +1,6 @@
-﻿using BitcoinExchange.ServiceLayer.Services;
-using DAL;
-using DAL.RemoteRepositories;
+﻿using BitcoinExchange.DataLayer;
+using BitcoinExchange.DataLayer.RemoteRepositories;
+using BitcoinExchange.ServiceLayer.Services;
 using Infrastructure.Common.WebService;
 using Infrastructure.DataLayer;
 using Infrastructure.DataLayer.Connection;

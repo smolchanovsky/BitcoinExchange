@@ -6,7 +6,7 @@ using DomainObjects;
 using DomainObjects.Enums;
 using Infrastructure.Common.WebService;
 
-namespace DAL.RemoteRepositories
+namespace BitcoinExchange.DataLayer.RemoteRepositories
 {
     public class HitbtcTradeRepository : IHitbtcTradeRepository
     {

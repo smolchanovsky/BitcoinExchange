@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using BitcoinExchange.DataLayer.RemoteRepositories;
 using BitcoinExchange.ServiceLayer.DataTransferObjects;
-using DAL.RemoteRepositories;
 using DomainObjects;
 using DomainObjects.Enums;
 using Infrastructure.DataLayer;

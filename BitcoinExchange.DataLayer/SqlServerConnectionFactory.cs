@@ -1,6 +1,6 @@
 ﻿using Infrastructure.DataLayer.Connection;
 
-namespace DAL
+namespace BitcoinExchange.DataLayer
 {
     /// <summary>
     /// Creates a connection to the SQL Server.
