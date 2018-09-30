@@ -2,7 +2,7 @@
 using System.Linq;
 using AutoMapper;
 using Infrastructure.Common;
-using Infrastructure.DAL;
+using Infrastructure.DataLayer;
 using Infrastructure.ServiceLayer.UnitOfWork;
 
 namespace Infrastructure.ServiceLayer

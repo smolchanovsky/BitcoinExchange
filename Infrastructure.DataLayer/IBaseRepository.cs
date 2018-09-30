@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Infrastructure.Common;
 
-namespace Infrastructure.DAL
+namespace Infrastructure.DataLayer
 {
     public interface IBaseRepository<TDomain> where TDomain : IEntity
     {

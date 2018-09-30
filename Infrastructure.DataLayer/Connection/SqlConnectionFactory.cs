@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace Infrastructure.DAL.Connection
+namespace Infrastructure.DataLayer.Connection
 {
     /// <summary>
     /// Base class for SQL connection factory.

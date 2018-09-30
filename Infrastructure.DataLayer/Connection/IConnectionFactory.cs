@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Infrastructure.DAL.Connection
+namespace Infrastructure.DataLayer.Connection
 {
     public interface IConnectionFactory
     {

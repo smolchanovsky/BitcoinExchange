@@ -5,7 +5,7 @@ using BitcoinExchange.ServiceLayer.DataTransferObjects;
 using DAL.RemoteRepositories;
 using DomainObjects;
 using DomainObjects.Enums;
-using Infrastructure.DAL;
+using Infrastructure.DataLayer;
 using Infrastructure.ServiceLayer;
 using Infrastructure.ServiceLayer.UnitOfWork;
 

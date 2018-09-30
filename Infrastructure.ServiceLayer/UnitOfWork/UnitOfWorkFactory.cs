@@ -1,4 +1,4 @@
-﻿using Infrastructure.DAL.Connection;
+﻿using Infrastructure.DataLayer.Connection;
 
 namespace Infrastructure.ServiceLayer.UnitOfWork
 {

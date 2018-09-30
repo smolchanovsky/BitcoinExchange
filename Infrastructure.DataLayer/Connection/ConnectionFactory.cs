@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace Infrastructure.DAL.Connection
+namespace Infrastructure.DataLayer.Connection
 {
     /// <summary>
     /// Base class for connection factory.

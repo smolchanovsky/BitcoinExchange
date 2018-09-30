@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using DapperExtensions;
 using Infrastructure.Common;
-using Infrastructure.DAL.Connection;
+using Infrastructure.DataLayer.Connection;
 
-namespace Infrastructure.DAL
+namespace Infrastructure.DataLayer
 {
     /// <summary>
     /// The base  <a href="https://github.com/StackExchange/Dapper">Dapper</a> repository that implements a common functional.

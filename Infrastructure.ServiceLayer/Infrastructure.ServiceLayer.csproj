@@ -12,7 +12,7 @@
     <ProjectReference Include="..\Infrastructure.Common\Infrastructure.Common.csproj">
       <Private>true</Private>
     </ProjectReference>
-    <ProjectReference Include="..\Infrastructure.DAL\Infrastructure.DAL.csproj" />
+    <ProjectReference Include="..\Infrastructure.DataLayer\Infrastructure.DataLayer.csproj" />
   </ItemGroup>
 
 </Project>

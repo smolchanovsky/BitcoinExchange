@@ -2,8 +2,8 @@
 using DAL;
 using DAL.RemoteRepositories;
 using Infrastructure.Common.WebService;
-using Infrastructure.DAL;
-using Infrastructure.DAL.Connection;
+using Infrastructure.DataLayer;
+using Infrastructure.DataLayer.Connection;
 using Infrastructure.ServiceLayer.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
 
